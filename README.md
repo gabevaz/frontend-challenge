@@ -1,6 +1,6 @@
-# frontend-challenge
+# Frontend Challenge Novatize
 
-> Coding challenge Novatize!
+> Ce repo contient une interface web pour le coding challenge Novatize.
 
 ## Technologies
 - [**HTML**](https://developer.mozilla.org/pt-BR/docs/Web/HTML)
