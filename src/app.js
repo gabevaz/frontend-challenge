@@ -17,14 +17,18 @@ initFormListeners(form);
 initCookieBanner();
 populateDoggoBreedSelect();
 
+function clearValidation() {
+  for (var i = 0; i < formItems.length; i++) {
+    formItems[i].classList.remove('error');
+    formItems[i].classList.remove('success');
+  }
+}
+
 function initFormListeners(formToInit) {
   formToInit.addEventListener("submit", (e) => {
     e.preventDefault();
 
-    for (var i = 0; i < formItems.length; i++) {
-      formItems[i].classList.remove('error');
-      formItems[i].classList.remove('success');
-    }
+    clearValidation();
 
     if (validateAllInputs()) {
       sendInfos(
@@ -211,6 +215,8 @@ fetch("https://api.devnovatize.com/frontend-challenge", {
 })
   .then((response) => {
     if (response.status === 201) {
+      clearValidation();
+      form.reset();
       displaySuccessModal();
     }
     else if (response.status === 400) {
