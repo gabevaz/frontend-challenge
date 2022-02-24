@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="src/styles.css" />
+  <link rel="shortcut icon" type="image/png"
+    href="https://novatize.com/app/themes/novatize/dist/images/favicon-32x32.png" />
+  <title>Novatize Frontend Challenge</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
+</head>
+
+<body>
+  <header class="header">
+    <div id="menuToggle">
+      <input type="checkbox" />
+      
+      <span></span>
+      <span></span>
+      <span></span>
+
+      <ul class="menu" id="menu">
+        <li><a href="#">Best Dogs</a></li>
+        <li><a href="#">Best Cats</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Log In</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <div class="main">
+    <div id="modal-success" class="modal">
+      <div class="modal__content">
+        <span class="modal__close">&times;</span>
+        <p class="h2">&#x1F389; Profile successfully created. &#x1F389;</p>
+      </div>
+    </div>
+    <div id="modal-error" class="modal">
+      <div class="modal__content">
+        <span class="modal__close">&times;</span>
+        <p class="h2">&#x1F613; An error occured while creating profile &#x1F613;</p>
+        <p class="h2" id="modal-error-message"></p>
+      </div>
+    </div>
+    <div id="cookie-mask" class="cookie-banner-mask"></div>
+    <div id="cookie-banner" class="cookie-banner">
+      <div class="cookie-banner__content">
+        <p class="h2">&#x1F36A; This website uses cookies &#x1F36A;</p>
+        <p>
+          We and our partners use cookies (and similar technologies) and
+          process unique identifiers and browsing data to make our site and
+          services work, to help us improve them and for the purposes listed
+          below. We and our partners may process your personal data based on
+          your consent and our legitimate interests.
+        </p>
+        <div class="cookie-banner-btns">
+            <button class="button button__primary">Accept</button>
+            <button class="button button__secondary">Reject</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-photos column">
+      <div class="photos">
+        <img
+          src="https://images.unsplash.com/photo-1529467037979-99d067b7677d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=435&q=80" />
+        <img
+          src="https://images.unsplash.com/photo-1615751072497-5f5169febe17?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=435&q=80" />
+        <img
+          src="https://images.unsplash.com/photo-1593134257782-e89567b7718a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80" />
+        <img
+          src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80" />
+        <img
+          src="https://images.unsplash.com/photo-1601979031925-424e53b6caaa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80" />
+        <img
+          src="https://images.unsplash.com/photo-1610244130620-fd348aa7854e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=869&q=80" />
+      </div>
+    </div>
+    <div class="container column">
+      <div class="profile__header">
+        <h2>Create your profile</h2>
+      </div>
+      <form class="form" name="contact-form" id="contact-form" novalidate>
+        <div class="row">
+          <div class="form__control column">
+            <label>First name</label>
+            <div class="form__control-input">
+              <input type="text" placeholder="Jane" name="first-name" id="first-name" />
+              <i class="fa fa-check-circle"></i>
+              <i class="fa fa-exclamation-circle"></i>
+            </div>
+            <small>Must not be blank</small>
+          </div>
+          <div class="form__control column">
+            <label>Last name</label>
+            <div class="form__control-input">
+              <input type="text" placeholder="Doe" name="last-name" id="last-name" />
+              <i class="fa fa-check-circle"></i>
+              <i class="fa fa-exclamation-circle"></i>
+            </div>
+            <small>Must not be blank</small>
+          </div>
+        </div>
+        <div class="row">
+          <div class="form__control column">
+            <label>Your Dog's name</label>
+            <div class="form__control-input">
+              <input type="text" placeholder="Cobalt" name="doggo-name" id="doggo-name" />
+              <i class="fa fa-check-circle"></i>
+              <i class="fa fa-exclamation-circle"></i>
+            </div>
+            <small>Must not be blank</small>
+          </div>
+        </div>
+        <div class="form__control column">
+          <label>Your Dog's Breed</label>
+          <div class="form__control-input">
+            <select name="doggo-breed" id="doggo-breed">
+            </select>
+          </div>
+        </div>
+        <div class="row">
+          <div class="form__control column">
+            <label>Email</label>
+            <div class="form__control-input">
+              <input type="email" name="email" id="email" />
+              <i class="fa fa-check-circle"></i>
+              <i class="fa fa-exclamation-circle"></i>
+            </div>
+            <small>Invalid email</small>
+          </div>
+          <div class="form__control column">
+            <label>Confirm Email</label>
+            <div class="form__control-input">
+              <input type="email" name="confirm-email" id="confirm-email" />
+              <i class="fa fa-check-circle"></i>
+              <i class="fa fa-exclamation-circle"></i>
+            </div>
+            <small>Emails not equal</small>
+          </div>
+        </div>
+        <div class="row">
+          <div class="form__control column">
+            <label>Password</label>
+            <div class="form__control-input">
+              <input type="password" name="password" id="password" />
+              <i class="fa fa-check-circle"></i>
+              <i class="fa fa-exclamation-circle"></i>
+            </div>
+            <small>Invalid password</small>
+          </div>
+          <div class="form__control column">
+            <label>Confirm Password</label>
+            <div class="form__control-input">
+              <input type="password" name="confirm-password" id="confirm-password" />
+              <i class="fa fa-check-circle"></i>
+              <i class="fa fa-exclamation-circle"></i>
+            </div>
+            <small>Passwords not equal</small>
+          </div>
+        </div>
+        <button class="button button__primary">Submit</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="src/app.js"></script>
+</body>
+
+</html>
